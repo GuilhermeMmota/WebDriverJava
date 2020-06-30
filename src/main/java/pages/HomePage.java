@@ -41,6 +41,26 @@ public class HomePage {
         return new AlertsPage(driver);
     }
 
+    public FileUploadPage clickFileUpload() {
+        cliclLink("File Upload");
+        return new FileUploadPage(driver);
+    }
+
+    public ContextMenuPage clickContextMenu() {
+        cliclLink("Context Menu");
+        return new ContextMenuPage(driver);
+    }
+
+    public WysiwygEditorPage clickWysiwygEditor() {
+        cliclLink("WYSIWYG Editor");
+        return new WysiwygEditorPage(driver);
+    }
+
+    public TestFramesPage clickTestFrames() {
+        cliclLink("Nested Frames");
+        return new TestFramesPage(driver);
+    }
+
     private void cliclLink(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
     }
