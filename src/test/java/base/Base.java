@@ -18,6 +18,7 @@ public class Base {
     public void setUp() {
         System.setProperty("webdriver.gecko.driver", "resources/geckodriver.exe");
         driver = new FirefoxDriver();
+        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); // Esperas implicitas.. espera p/ achar o elemento
         goHome();
 
         //https://formy-project.herokuapp.com

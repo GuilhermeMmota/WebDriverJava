@@ -61,6 +61,11 @@ public class HomePage {
         return new TestFramesPage(driver);
     }
 
+    public DynamicLoadingPage clickDynamicLoading() {
+        cliclLink("Dynamic Loading");
+        return new DynamicLoadingPage(driver);
+    }
+
     private void cliclLink(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
     }
