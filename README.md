@@ -1,3 +1,3 @@
 # WebDriverJava
-Automatizando site com selenium web driver
-# Selenium support
+Criando cenarios de testes e automatizando com selenium web driver
+- Selenium support
