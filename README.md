@@ -1,3 +1,8 @@
 # WebDriverJava
-Automatizando site com selenium web driver
-# Selenium support
+Criando cenarios de testes e automatizando com selenium web driver
+- Selenium support
+- Actions
+- Alerts
+- Espera implícita
+- Espera explícita
+- Espera fluente
