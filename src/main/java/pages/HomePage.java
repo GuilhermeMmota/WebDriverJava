@@ -76,6 +76,11 @@ public class HomePage {
         return new InfiniteScrollPage(driver);
     }
 
+    public MultiplewindowsPage clickMultipleWindows(){
+        cliclLink("Multiple Windows");
+        return new MultiplewindowsPage(driver);
+    }
+
     private void cliclLink(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
     }
