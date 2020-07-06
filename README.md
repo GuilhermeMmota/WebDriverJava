@@ -6,3 +6,4 @@ Criando cenarios de testes e automatizando com selenium web driver
 - Espera implícita
 - Espera explícita
 - Espera fluente
+- Scroll
