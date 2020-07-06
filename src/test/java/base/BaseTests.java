@@ -1,6 +1,8 @@
 package base;
 
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -17,10 +19,11 @@ public class BaseTests {
     @BeforeClass
     public void setUp() {
         System.setProperty("webdriver.gecko.driver", "resources/geckodriver.exe");
-        driver = new EventFiringWebDriver (new FirefoxDriver());
+        driver = new EventFiringWebDriver (new FirefoxDriver(getFirefoxOptions()));
         driver.register(new EventReport());
 
         goHome();
+        delcookie();
 
         //https://formy-project.herokuapp.com
         homePage = new HomePage(driver);
@@ -44,6 +47,17 @@ public class BaseTests {
 //    public void tearDown() {
 //        driver.quit();
 //    }
+
+    private FirefoxOptions getFirefoxOptions(){
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("disable-infobars");
+        return options;
+    }
+    private void delcookie() {
+        Cookie cookie = new Cookie.Builder("optimizelyBuckets", "%7B%7D")
+                .domain("https://the-internet.herokuapp.com").build();
+                driver.manage().deleteCookie(cookie);
+    }
 
     public WindowManager getWindowManager() { // Metodo p/ saber onde estamos
         return new WindowManager(driver);
